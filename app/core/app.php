@@ -27,10 +27,18 @@ class app
         if (isset($url[1])) { //(home = new home)->object   ma index vanne method xa ke nai xa ke xaina )
             // show($url[1]);
             if (method_exists($this->controller, $url[1])) { //checking home class or object if is has index method or not
+                $this->method = $url[1];
                 unset($url[1]);
             }
         }
-        show($url); 
+        // show($url); // ------(compare with down show(array..))
+
+        // now making URL[-] array  indexes in increasing order
+        // show(array_values($url));//-------(compare with up show($utl))
+        // ==running class and method 
+        $this->params =  array_values($url);
+        call_user_func_array([$this->controller,  $this->method],   $this->params); // Call the  $this->controller->$this->method method with 2 arguments
+        //   home class vitra ko index vanne method ma tyo new created array pathako
     }
 
 
