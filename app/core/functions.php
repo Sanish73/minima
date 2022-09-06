@@ -1,9 +1,9 @@
 <?php
 
 
-function show($any){
+function show($stuff){
    
     echo("<pre>");
-    print_r($any); 
-    echo("</spre>");
+    print_r($stuff); 
+    echo("</pre>");
 }

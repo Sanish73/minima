@@ -1,15 +1,19 @@
 <?php
 
 class app{
+
+    private $controller  = "home"; ///this is from controllers/home.php
+    private $method = "index";
+    private $params = [];
   
    public  function __construct()
     {
         // echo("hello");
         // print_r($_GET); //this is print readable 
         $url = $this->splitURL();
-        echo("<pre>");
-        print_r($url);
-        echo("</spre>");
+      
+    show($url);
+      
     } 
     
 
