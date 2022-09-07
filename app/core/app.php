@@ -49,7 +49,9 @@ class app
 
     private function splitURL() //public beacause we want to use it outside the class
     {
+        $url = isset($_GET['url']) ? $_GET['url'] : "home";
+      
 
-        return explode("/",  filter_var(trim($_GET['url'], "/ ") ,FILTER_SANITIZE_URL));
+        return explode("/",  filter_var(trim($url, "/ ") ,FILTER_SANITIZE_URL));
     }
 }
