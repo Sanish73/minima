@@ -24,13 +24,14 @@ class app
         //if we didnt fint file exists then then url[0] doesnot exit but we need it so we set it
         require("../app/controllers/" . $this->controller . ".php");
         //now making the class of the $this->controller beacuase we dont know what its value willl be
-        $this->controller = new $this->controller; //class is same as an(home = new home)  
+        $this->controller = new $this->controller(); //class is same as an(home = new home)  
         //now checking url[1]
         if (isset($url[1])) { //(home = new home)->object   ma index vanne method xa ke nai xa ke xaina )
             // show($url[1]);
             if (method_exists($this->controller, $url[1])) { //checking home class or object if is has index method or not
                 $this->method = $url[1];
                 unset($url[1]);
+                // show($this->controller);
             }
         }
         // show($url); // ------(compare with down show(array..))
@@ -41,6 +42,7 @@ class app
         $this->params =  array_values($url);
         // show($this->controller);
         call_user_func_array([$this->controller,  $this->method],   $this->params); // Call the  $this->controller->$this->method method with 2 arguments
+        //this function can run both class and method in a same time
         //   home class vitra ko index vanne method ma tyo new created array pathako
     }
 
@@ -48,6 +50,6 @@ class app
     private function splitURL() //public beacause we want to use it outside the class
     {
 
-        return explode('/', trim($_GET['url'], '/'));
+        return explode("/",  filter_var(trim($_GET['url'], "/ ") ,FILTER_SANITIZE_URL));
     }
 }
