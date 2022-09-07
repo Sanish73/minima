@@ -17,7 +17,9 @@ class app
             $this->controller  = strtolower($url[0]);
             unset($url[0]);
             // print_r($_GET);
+            // show($this->controller);
         }
+        
         // show($url);
         //if we didnt fint file exists then then url[0] doesnot exit but we need it so we set it
         require("../app/controllers/" . $this->controller . ".php");
@@ -37,6 +39,7 @@ class app
         // show(array_values($url));//-------(compare with up show($utl))
         // ==running class and method 
         $this->params =  array_values($url);
+        // show($this->controller);
         call_user_func_array([$this->controller,  $this->method],   $this->params); // Call the  $this->controller->$this->method method with 2 arguments
         //   home class vitra ko index vanne method ma tyo new created array pathako
     }
