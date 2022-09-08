@@ -12,4 +12,11 @@ class Controller{
 
     }
 
+    protected function loadModel($model){ //just loading classs the classes we need(image crop)
+        if(file_exists("../app/models/" . $model. ".php")){
+            include("../app/models/" . $model. ".php");
+           return $model = new $model();
+        }
+        return false;
+    }
 }

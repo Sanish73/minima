@@ -3,7 +3,7 @@
 class app
 {
 
-    private $controller  = "home"; ///this is from controllers/home.php
+    private $controller = "home"; ///this is from controllers/home.php
     private $method = "index";
     private $params = [];
 
