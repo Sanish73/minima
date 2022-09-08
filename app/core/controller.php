@@ -2,7 +2,7 @@
 
 
 class Controller{
-//    protected beacause all teh other controller extends this functoin so it is protected i  guess 
+//    protected beacause all teh other controller extends this functoin so it is protected i  guess ..
    protected function view($view){
         if(file_exists("../app/views/" . $view. ".php")){
             include("../app/views/" . $view. ".php");
