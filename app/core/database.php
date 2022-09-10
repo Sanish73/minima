@@ -15,6 +15,7 @@ class Database
 
     public  function read($qry, $data = [])
     {
+        //mathi ko $db bata return aako value yo $DB ma aauxa ..nulll vayo vaney value aaayana vanxa 
         $DB = $this->db_connect(); //this makes connection 
         $stm = $DB->prepare($qry); //prepare statement its just to aovid beaignh hack beacuae we  put out variable in a queary ina a seperate place
         $check = $stm->execute($data);
