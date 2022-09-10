@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><?=$data['page_title'] . " | " . WEBSITE_TITLE?></title>
+    <title><?= $data['page_title'] . " | " . WEBSITE_TITLE?></title>
     <link rel="stylesheet" href="<?=ASSETS?>minima/css/components.css">
     <link rel="stylesheet" href="<?=ASSETS?>minima/css/icons.css">
     <link rel="stylesheet" href="<?=ASSETS?>minima/css/responsee.css">

@@ -15,7 +15,8 @@ class Home extends Controller
         // show($DB);
         // $image_class  = $this->loadModel("image_class");
         // show($image_class);
-        $data['title'] = "web page"; 
+        $data['WEBSITE_TITLE'] = "web page"; 
+        $data['page_title'] = "web page"; 
         $this->view("minima/index" , $data);
     }
 }
