@@ -12,7 +12,7 @@
             </div>  
           </header>
 
-          <?php //if(is_array($data['posts'])): ?>
+          <?php if(is_array($data['posts'])): ?>
           
           <?php foreach($data['posts'] as $row): ?>
 
