@@ -5,7 +5,7 @@ class About extends Controller{
     function index(){
      
         // $this->view("about");
-        $data['title'] ="ts";
+        $data['page_title'] ="ts";
         $this->view("minima/about-us" , $data);
       
     }
