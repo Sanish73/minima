@@ -1,1 +1,1 @@
-this is home page
+this is <?= $data['title']?> and   home.php
