@@ -8,13 +8,14 @@ class Home extends Controller
         // show($a);
         // show($b);
         // show($c);
-        $DB = new Database();
-        $data['code']  = $DB->read("SELECT * FROM images");
-        $data['title'] = "web page"; 
+        // $DB = new Database();
+        // $data['code']  = $DB->read("SELECT * FROM images");
+       
         // show($data[0]->image);
         // show($DB);
-        $image_class  = $this->loadModel("image_class");
+        // $image_class  = $this->loadModel("image_class");
         // show($image_class);
-        $this->view("home" , $data);
+        $data['title'] = "web page"; 
+        $this->view("minima/index" , $data);
     }
 }
