@@ -5,7 +5,7 @@ class Contact extends Controller{
     function index(){
      
         // $this->view("about");
-        $data['page_title'] ="ts";
+        $data['WEBSITE_TITLE'] = "Contact Us"; 
         $this->view("minima/contact" , $data);
       
     }
