@@ -154,7 +154,7 @@
                     <p class="text-white text-size-14 margin-bottom-20">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>  
                   </div> 
                 </div> 
-                <img class="full-img" src="<?= ASSETS ?>minima/img/portfolio/thumb-09.jpg" alt=""/>
+               
               </a>	
             </div>
             <div class="s-12 m-6 l-five">
