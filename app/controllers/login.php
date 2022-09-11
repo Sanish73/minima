@@ -1,6 +1,6 @@
 <?php
 
-class Home extends Controller
+class Login extends Controller
 {
     //this is for not talking empty value from URL
     function index()
@@ -15,8 +15,8 @@ class Home extends Controller
         // show($DB);
         // $image_class  = $this->loadModel("image_class");
         // show($image_class);
-        $data['WEBSITE_TITLE'] = "Home page"; 
+        $data['WEBSITE_TITLE'] = "Login"; 
         // $data['page_title'] = "web page"; 
-        $this->view("minima/index" , $data);
+        $this->view("minima/login" , $data);
     }
 }
