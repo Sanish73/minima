@@ -102,7 +102,7 @@ body {
 </style>
 <?php $this->view("minima/header" , $data);?>
 
-<div class="login-page"><h2>Login</h2>
+<div class="login-page">
   <div class="form">
     <form class="register-form" method="POST">
       <input type="text" name="username" placeholder="name"/>

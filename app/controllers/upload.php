@@ -15,13 +15,21 @@ class Upload extends Controller
         // show($DB);
         // $image_class  = $this->loadModel("image_class");
         // show($image_class);
-        $data['WEBSITE_TITLE'] = "Upload "; 
+        // $data['WEBSITE_TITLE'] = "Upload "; 
+        header("Location:".ROOT."login");
+        die;
         // $data['page_title'] = "web page"; 
-        $this->view("minima/upload" , $data);
+        // $this->view("minima/upload" , $data);
     }
 
     function image()
     {
+        $user=$this->loadmodel('user');
+       if( !$result = $user->check_logged_in()){
+        header("Location:".ROOT."login");
+        die;
+       }
+
         
         $data['WEBSITE_TITLE'] = "Upload "; 
         // $data['page_title'] = "web page"; 
