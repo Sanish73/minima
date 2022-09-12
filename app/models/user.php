@@ -7,6 +7,7 @@ class User
     function login()
     {
         $DB = new Database();
+        $_SESSION['error'] = '';
 
         if (isset($_POST['username']) && isset($_POST['password'])) {
             $arr['username'] = $_POST['username'];
@@ -18,7 +19,11 @@ class User
                 //logged in
                 $_SESSION['user-id'] = $data[0]->userid;
                 $_SESSION['user-name'] = $data[0]->username;
+            }else{
+                $_SESSION['error'] = "Wrong  username and password"
             }
+        }else{
+            $_SESSION['error'] = "Please Enter valid username and password"
         }
     }
 
@@ -26,7 +31,7 @@ class User
     {
     }
 
-    function check_login()
+    function check_loged_in()
     { //check whether user is login or not
 
     }
