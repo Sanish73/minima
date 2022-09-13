@@ -15,7 +15,7 @@ class Signup extends Controller
         // show($DB);
         // $image_class  = $this->loadModel("image_class");
         // show($image_class);
-        $data['WEBSITE_TITLE'] = "Signup"; 
+        // $data['WEBSITE_TITLE'] = "Signup"; 
         // $data['page_title'] = "web page"; 
         $this->view("minima/signup" , $data);
     }
