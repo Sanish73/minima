@@ -10,10 +10,7 @@
                 <p class="subject-error form-error">Please enter the title.</p>
             </div>
 
-            <div class="s-12">
-                <input name="file" class="subject" type="file" required>
-                <p class="subject-error form-error">Please Select a File</p>
-            </div>
+           
 
             <div class="s-12">
                 <textarea name="description" class="required message" placeholder="Description" rows="3"></textarea>
