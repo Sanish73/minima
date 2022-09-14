@@ -17,10 +17,10 @@ class Login extends Controller
         // show($image_class);
         $data['WEBSITE_TITLE'] = "Login"; 
         // $data['page_title'] = "web page"; 
-        if(isset($_POST('email'))){
+        if(null!==($_POST('email'))){
             $user = $this->loadModel("user");
             $user->signup($_POST);
-        }elseif(isset($_POST('username')) && !isset($_POST('username'))){
+        }elseif(null!==($_POST('username')) && null!==($_POST('username'))){
             $user = $this->loadModel("user");
             $user->login($_POST);
         }
