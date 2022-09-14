@@ -7,7 +7,7 @@ class Database
         try {
 
             // $string = DB_TYPE."mysql:host=".DB_HOST."dbname=".DB_NAME;;
-           return  $db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
+            return  $db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
         } catch (PDOException $e) {
             die($e->getMessage());
         }
@@ -32,7 +32,11 @@ class Database
         }
 
         if ($check) {
-            return $stm->fetchAll(PDO::FETCH_OBJ);
+            $data = $stm->fetchAll(PDO::FETCH_OBJ);
+            if (is_array($data)  && count($data) > 0) {
+                return $data;
+            }
+            return false;
         } else {
             return false;
         }

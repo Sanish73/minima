@@ -19,7 +19,8 @@ class User
 
             if (is_array($data)) {
                 //logged in
-                $_SESSION['user_id'] = $data[0]->userid;
+                // show($data);
+                $_SESSION['user_id'] = $data[0]->id; //arrey aauxa $data vaeko,,aane tya bata userid vanne table bata linxa data
                 $_SESSION['user_name'] = $data[0]->username;
                 $_SESSION['user_url'] = $data[0]->url_address;
             } else {

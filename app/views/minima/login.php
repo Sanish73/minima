@@ -103,6 +103,7 @@ body {
 <?php $this->view("minima/header" , $data);?>
 
 <div class="login-page">
+<?php check_message() ?>
   <h1><?php echo $data['WEBSITE_TITLE'];?>'</h1>
   <div class="form">
     <form class="register-form" method="POST">
