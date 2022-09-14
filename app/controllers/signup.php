@@ -17,6 +17,13 @@ class Signup extends Controller
         // show($image_class);
         $data['WEBSITE_TITLE'] = "Signup"; 
         // $data['page_title'] = "web page"; 
+        if(null!==($_POST('email'))){
+            $user = $this->loadModel("user");
+            $user->signup($_POST);
+        }elseif(null!==($_POST('username')) && null!==($_POST('username'))){
+            $user = $this->loadModel("user");
+            $user->login($_POST);
+        }
         $this->view("minima/signup" , $data);
     }
 }
