@@ -17,10 +17,15 @@ class Signup extends Controller
         // show($image_class);
         $data['WEBSITE_TITLE'] = "Signup"; 
         // $data['page_title'] = "web page"; 
-        if(null!==($_POST('email'))){
+        if(isset($_POST['email']))
+        {
+          // $post = $_POST['email'];
+          // echo $post;
             $user = $this->loadModel("user");
             $user->signup($_POST);
-        }elseif(null!==($_POST('username')) && null!==($_POST('username'))){
+
+        }elseif(isset($_POST['username']) && !isset($_POST['email'])){
+
             $user = $this->loadModel("user");
             $user->login($_POST);
         }

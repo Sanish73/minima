@@ -1,5 +1,5 @@
 
-
+<?php
 // class Login extends Controller
 // {
 //     //this is for not talking empty value from URL
@@ -29,7 +29,7 @@
 //     }
 // }
 
-<?php
+
 
 Class Login extends Controller 
 {
@@ -40,6 +40,8 @@ Class Login extends Controller
 
  	 	if(isset($_POST['email']))
  	 	{
+            // $post = $_POST['email'];
+            // echo $post;
  	 		$user = $this->loadModel("user");
  	 		$user->signup($_POST);
 

@@ -4,7 +4,7 @@
 class User
 {
 
-    function login($_POST)
+    function login($POST)
     {
         $DB = new Database();
         $_SESSION['error'] = '';
@@ -28,7 +28,7 @@ class User
         }
     }
 
-    function signup($_POST)
+    function signup($POST)
     {
         $DB = new Database();
         $_SESSION['error'] = '';
@@ -50,7 +50,7 @@ class User
         }
     }
 
-    function check_loged_in($_POST)
+    function check_loged_in()
     { //check whether user is login or not
         $DB = new Database();
         
