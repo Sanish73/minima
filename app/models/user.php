@@ -53,6 +53,7 @@ class User
     function check_loged_in()
     { //check whether user is login or not
         $DB = new Database();
+        
         if (isset($_SESSION['user_url'])) {
             $arr['user_url'] = $_SESSION['user_url'];
             $qry = "SELECT * FROM users WHERE user_address = :user_url  limit 1 ";
