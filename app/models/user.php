@@ -12,6 +12,8 @@ class User
         if (isset($_POST['username']) && isset($_POST['password'])) {
             $arr['username'] = $_POST['username'];
             $arr['password'] = $_POST['password'];
+           
+
             $qry = "SELECT * FROM users WHERE username = :username && password = :password limit 1 ";
             $data = $DB->read($qry, $arr);
 
@@ -37,7 +39,10 @@ class User
             $arr['username'] = $_POST['username'];
             $arr['password'] = $_POST['password'];
             $arr['email'] = $_POST['email'];
-            $qry = "INSERT INTO users (username , password, email) values(:username, :password, :email)";
+            $arr['url_address'] =  get_random_string_max(60);
+            $arr['date'] = date("y-m-d H:i:s");
+            
+            $qry = "INSERT INTO users (username , password, email, url_address , date) values(:username, :password, :email, :url_address , :date)";
             $data = $DB->write($qry, $arr);
 
             if ($data) {
