@@ -43,7 +43,7 @@ Class Login extends Controller
             // $post = $_POST['email'];
             // echo $post;
  	 		$user = $this->loadModel("user");
- 	 		$user->signup($_POST);
+ 	 		// $user->signup($_POST);
 
  	 	}elseif(isset($_POST['username']) && !isset($_POST['email'])){
 
