@@ -49,6 +49,7 @@ Class Login extends Controller
 
  	 		$user = $this->loadModel("user");
  	 		$user->login($_POST);
+			// echo ("hi");
  	 	}
 
 		$this->view("minima/login",$data);
