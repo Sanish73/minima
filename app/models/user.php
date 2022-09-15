@@ -1,6 +1,5 @@
 <?php
 
-
 class User
 {
 
@@ -60,23 +59,48 @@ class User
         }
     }
 
-    function check_loged_in()
-    { //check whether user is login or not
-        $DB = new Database();
+    // function check_logged_in()
+    // { //check whether user is login or not
+    //     $DB = new Database();
         
-        if (isset($_SESSION['user_url'])) {
-            $arr['user_url'] = $_SESSION['user_url'];
-            $qry = "SELECT * FROM users WHERE user_address = :user_url  limit 1 ";
-            $data = $DB->read($qry, $arr);
+    //     if (isset($_SESSION['user_url'])) {
+    //         $arr['user_url'] = $_SESSION['user_url'];
+    //         $qry = "SELECT * FROM users WHERE user_address = :user_url  limit 1 ";
+    //         $data = $DB->read($qry, $arr);
 
-            if (is_array($data)) {
-                //logged in
-                $_SESSION['user_id'] = $data[0]->userid;
-                $_SESSION['user_name'] = $data[0]->username;
-                $_SESSION['user_url'] = $data[0]->url_address;
-                return true;
-            }
-        }
-        return false;
-    }
+    //         if (is_array($data)) {
+    //             //logged in
+    //             $_SESSION['user_id'] = $data[0]->userid;
+    //             $_SESSION['user_name'] = $data[0]->username;
+    //             $_SESSION['user_url'] = $data[0]->url_address;
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
+
+    function check_logged_in()
+	{
+
+		$DB = new Database();
+		if(isset($_SESSION['user_url']))
+		{
+
+			$arr['user_url'] = $_SESSION['user_url'];
+
+			$query = "select * from users where url_address = :user_url limit 1";
+			$data = $DB->read($query,$arr);
+			if(is_array($data))
+			{
+				//logged in
+ 				$_SESSION['user_name'] = $data[0]->username;
+				$_SESSION['user_url'] = $data[0]->url_address;
+
+				return true;
+			}
+		}
+
+		return false;
+
+	}
 }

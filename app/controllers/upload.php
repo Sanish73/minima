@@ -16,23 +16,31 @@ class Upload extends Controller
         // $image_class  = $this->loadModel("image_class");
         // show($image_class);
         // $data['WEBSITE_TITLE'] = "Upload "; 
-        header("Location:".ROOT."login");
+        header("Location:".ROOT."upload/image");
         die;
         // $data['page_title'] = "web page"; 
         // $this->view("minima/upload" , $data);
     }
 
     function image()
-    {
-        $user=$this->loadmodel('user');
-       if( !$result = $user->check_logged_in()){//if it returns false we are good to go
-        header("Location:".ROOT."login");
-        die;
-       }
+	{
+ 	 	
+ 	 	$user = $this->loadModel("user");
+ 	 	
+ 	 	if(!$result = $user->check_logged_in())
+ 	 	{
+ 	 		header("Location:". ROOT . "login");
+			die;
+ 	 	}
 
-        
-        $data['WEBSITE_TITLE'] = "Upload "; 
-        // $data['page_title'] = "web page"; 
-        $this->view("minima/upload" , $data);
-    }
+ 	 	if(isset($_POST['title']) && isset($_FILES['file']))
+ 	 	{
+ 	 		$uploader = $this->loadModel("upload_file");
+ 	 		$uploader->upload($_POST,$_FILES);
+ 	 	}
+ 	 	
+ 	 	$data['page_title'] = "Upload";
+		$this->view("minima/upload",$data);
+	}
+
 }
