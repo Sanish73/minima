@@ -27,7 +27,7 @@ class Upload extends Controller
  	 	
  	 	$user = $this->loadModel("user");
  	 	
- 	 	if(!$result = $user->check_logged_in())
+ 	 	if(!$result = $user->check_logged_in())//this returs tru from user-models
  	 	{
  	 		header("Location:". ROOT . "login");
 			die;
