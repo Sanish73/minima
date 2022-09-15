@@ -29,6 +29,12 @@
       <header role="banner" class="position-absolute margin-top-30 margin-m-top-0 margin-s-top-0">    
         <!-- Top Navigation -->
         <nav class="background-transparent background-transparent-hightlight full-width sticky">
+        <?php if(isset($_SESSION['user_name'])){
+          ?>
+              Hi <?=$_SESSION['user_name'];?>
+              <?php
+        }
+         ?>
           <div class="s-12 l-2">
             <a href="<?= ASSETS ?>minima/index.html" class="logo">
               <!-- Logo version before sticky nav -->
@@ -44,8 +50,12 @@
                 <li><a href="<?= ROOT ?>home">Home</a></li>
                 <li><a href="<?= ROOT ?>about">About Us</a></li>             
                 <li><a href="<?= ROOT ?>contact">Contact</a></li>
+                <?php if(!isset($_SESSION['user_name'])):?>
                 <li><a href="<?= ROOT ?>login">Login</a></li>
                 <li><a href="<?= ROOT ?>signup">Signup</a></li>
+                <?php else: ?>
+                  <li><a href="<?= ROOT ?>logout">Logout</a></li>
+                <?php endif; ?>
                 <li><a href="<?= ROOT ?>upload">Upload</a></li>
               </ul>
             </div>
