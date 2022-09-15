@@ -55,8 +55,9 @@
                 <li><a href="<?= ROOT ?>signup">Signup</a></li>
                 <?php else: ?>
                   <li><a href="<?= ROOT ?>logout">Logout</a></li>
+                  <li><a href="<?= ROOT ?>upload">Upload</a></li>
                 <?php endif; ?>
-                <li><a href="<?= ROOT ?>upload">Upload</a></li>
+                
               </ul>
             </div>
           </div>  
