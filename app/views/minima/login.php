@@ -104,7 +104,7 @@ body {
 
 <div class="login-page">
 <?php check_message() ?>
-  <h1><?php echo $data['WEBSITE_TITLE'];?>'</h1>
+  <h1><?php //echo $data['WEBSITE_TITLE'];?></h1>
   <div class="form">
     <form class="register-form" method="POST">
       <input type="text" name="username" placeholder="name"/>
