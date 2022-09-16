@@ -19,7 +19,7 @@ class Upload_file
 			 	$folder = "uploads/";
 			 	if(!file_exists($folder))
 			 	{
-			 		mkdir($folder,0777,true);
+			 		mkdir($folder,0777,true); //MAKING FOLDER
 
 			 	}
 
