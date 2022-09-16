@@ -1,9 +1,11 @@
 <?php $this->view("minima/header", $data); ?>
 
 <section class="section background-white">
+<?php check_message() ?>
+
     <div class="s-12 m-12 l-4 center">
         <h4 class="text-size-20 margin-bottom-20 text-dark text-center">Upload Image</h4>
-        <form name="contactForm" class="customform" method="post">
+        <form name="contactForm" enctype="multipart/form-data" class="customform" method="post">
             
             <div class="s-12">
                 <input name="title" class="subject" placeholder="Title" title="title" type="text" required>
