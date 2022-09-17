@@ -2,7 +2,6 @@
 
 Class Image_class
 {
-	//this crops the images 
 
 function resize_image_crop($original_image_path,$cropped_image_path,$width,$height,$where="mid") {
 
@@ -287,7 +286,7 @@ function resize_image_max($original_image_path,$resized_image_path,$max_width,$m
 		
 }
 
-function get_thumbnail($file, $width = 300,$height = 300){
+function get_thumbnail($file,$width = 300,$height = 300){
  
 		if(file_exists($file)){
 		
