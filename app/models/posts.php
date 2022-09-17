@@ -1,6 +1,6 @@
 <?php 
 
-Class Posts 
+Class Posts
 {
 
 	function get_all()
