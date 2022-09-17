@@ -1,15 +1,16 @@
-
 <?php
 
-class Upload_file
+Class Upload_file
 {
-    function upload($POST, $FILES)
-    {
-        $DB = new Database();
-        $_SESSION['error'] = '';
 
-        $allowed[] = "image/jpeg";
-        if(isset($POST['title']) && isset($FILES['file']))
+	function upload($POST,$FILES)
+	{
+		$DB = new Database();
+		$_SESSION['error'] = ""; 
+
+		$allowed[] = "image/jpeg";
+
+		if(isset($POST['title']) && isset($FILES['file']))
 		{
 			//upload file
 			if($FILES['file']['name'] != "" && $FILES['file']['error'] == 0 && in_array($FILES['file']['type'], $allowed))
@@ -19,7 +20,7 @@ class Upload_file
 			 	$folder = "uploads/";
 			 	if(!file_exists($folder))
 			 	{
-			 		mkdir($folder,0777,true); //MAKING FOLDER
+			 		mkdir($folder,0777,true);
 
 			 	}
 
@@ -42,7 +43,7 @@ class Upload_file
 				$arr['url_address'] = get_random_string_max(60);
 				$arr['date'] = date("Y-m-d H:i:s");
 
-				$query = "insert into images (title,description,url_address,date,images) values (:title,:description,:url_address,:date,:image)";
+				$query = "insert into images (title,description,url_address,date,image) values (:title,:description,:url_address,:date,:image)";
 				$data = $DB->write($query,$arr);
 				if($data)
 				{
@@ -54,5 +55,6 @@ class Upload_file
 
 		
 		}
-    }
+	}
+
 }

@@ -35,7 +35,7 @@ class Home extends Controller
         {
             foreach ($data['posts'] as $key => $value) {
                 # code...
-                $data['posts'][$key]->images = $image_class->get_thumbnail($data['posts'][$key]->images);
+                $data['posts'][$key]->image= $image_class->get_thumbnail($data['posts'][$key]->image);
             }
         }
       $this->view("minima/index",$data);
